@@ -177,6 +177,7 @@
     <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HRController.cs" />
+    <Compile Include="Controllers\JobApplicantsController.cs" />
     <Compile Include="Controllers\JobsController.cs" />
     <Compile Include="Controllers\LeaveApplicationsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -251,30 +252,12 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Images\contact-background.jpg" />
-    <Content Include="Images\details-1-iphone.png" />
-    <Content Include="Images\details-2-iphone.png" />
-    <Content Include="Images\details-lightbox-1.png" />
-    <Content Include="Images\details-lightbox-2.png" />
     <Content Include="Images\down-arrow.png" />
     <Content Include="Images\download-background.jpg" />
-    <Content Include="Images\download.png" />
     <Content Include="Images\favicon.png" />
-    <Content Include="Images\features-iphone-1.png" />
-    <Content Include="Images\features-iphone-2.png" />
-    <Content Include="Images\features-iphone-3.png" />
     <Content Include="Images\header-background.jpg" />
-    <Content Include="Images\header-iphone.png" />
     <Content Include="Images\logo.svg" />
-    <Content Include="Images\screenshot-1.png" />
-    <Content Include="Images\screenshot-10.png" />
-    <Content Include="Images\screenshot-2.png" />
-    <Content Include="Images\screenshot-3.png" />
-    <Content Include="Images\screenshot-4.png" />
-    <Content Include="Images\screenshot-5.png" />
-    <Content Include="Images\screenshot-6.png" />
-    <Content Include="Images\screenshot-7.png" />
-    <Content Include="Images\screenshot-8.png" />
-    <Content Include="Images\screenshot-9.png" />
+    <Content Include="Images\news-background-light.jpg" />
     <Content Include="Images\testimonial-1.jpg" />
     <Content Include="Images\testimonial-2.jpg" />
     <Content Include="Images\testimonial-3.jpg" />
@@ -411,6 +394,11 @@
     <Content Include="Views\Transactions\Edit.cshtml" />
     <Content Include="Views\Transactions\Index.cshtml" />
     <Content Include="Views\EmpDashboard\BioData.cshtml" />
+    <Content Include="Views\JobApplicants\Create.cshtml" />
+    <Content Include="Views\JobApplicants\Delete.cshtml" />
+    <Content Include="Views\JobApplicants\Details.cshtml" />
+    <Content Include="Views\JobApplicants\Edit.cshtml" />
+    <Content Include="Views\JobApplicants\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

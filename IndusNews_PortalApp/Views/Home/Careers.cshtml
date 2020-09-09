@@ -45,7 +45,7 @@
                         @Html.DisplayFor(modelItem => item.JobLastDate)
                     </td>
                     <td>
-                        @Html.ActionLink("Apply", "#", new { id = item.JobId })
+                        @Html.ActionLink("Apply", "Create", "JobApplicants",null, new { id = item.JobId, @class = "btn btn-primary" })
                     </td>
                 </tr>
             }

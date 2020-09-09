@@ -4,24 +4,24 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="jumbotron">
+<div class="jumbotron" style="background-color:lightblue">
     <h1>EMPLOYEE DASHBOARD</h1>
     <p class="lead">Visit profile, manage leave requests and check payroll details.</p>
     <p><a href="https://indus.news" target="_blank" class="btn btn-default btn-lg">Visit Indus News &raquo;</a></p>
 </div>
 
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-4" style="background-color:lightcyan">
         <h2>Attendance</h2>
         <p>Visit your attendance details</p>
         <p>@Html.ActionLink("Attendance", "EmpAttendance", "EmpDashboard", null, new { @class = "btn btn-primary" })</p>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-4" style="background-color:lightgrey">
         <h2>Profile</h2>
         <p>Check your profile details</p>
         <p>@Html.ActionLink("Info", "BioData", "EmpDashboard", null, new { @class = "btn btn-primary" })</p>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-4" style="background-color:lightsteelblue">
         <h2>Leave</h2>
         <p>Apply and manage your leave requests</p>
         <p>@Html.ActionLink("Leave", "Create", "LeaveApplications", null, new { @class = "btn btn-primary" })</p>

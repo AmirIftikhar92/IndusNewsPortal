@@ -4,29 +4,34 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="jumbotron">
+<div class="jumbotron" style="background-color:lightblue">
     <h1>HR DASHBOARD</h1>
     <p class="lead">Manage human resources and keep up tp date record of the organization</p>
     <p><a href="https://indus.news" target="_blank" class="btn btn-default btn-lg">Visit Indus News &raquo;</a></p>
 </div>
 
 <div class="row">
-    <div class="col-md-3">
+    <div class="col-md-3" style="background-color:darkseagreen">
         <h2>Jobs</h2>
         <p>Manage jobs and applicants</p>
         <p>@Html.ActionLink("Jobs", "Index", "Jobs", null, new { @class = "btn btn-primary" })</p>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-3" style="background-color:darkcyan">
+        <h2>Job Applications</h2>
+        <p>Check job applications</p>
+        <p>@Html.ActionLink("Job Applications", "Index", "JobApplicants", null, new { @class = "btn btn-primary" })</p>
+    </div>
+    <div class="col-md-3" style="background-color:aquamarine">
         <h2>Attendance</h2>
         <p>Manage attendance record to keep employee payroll accurate</p>
         <p>@Html.ActionLink("Attendance", "Index", "Attendances", null, new { @class = "btn btn-primary" })</p>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-3" style="background-color:darksalmon">
         <h2>Employees</h2>
         <p>Register employee and manage employees data</p>
         <p>@Html.ActionLink("Employee", "Index", "Employees", null, new { @class = "btn btn-primary" })</p>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-3" style="background-color:gainsboro">
         <h2>Leave</h2>
         <p>Check leave applications</p>
         <p>@Html.ActionLink("Leave Applications", "Index", "LeaveApplications", null, new { @class = "btn btn-primary" })</p>

@@ -269,7 +269,7 @@ a.white {
 .form-control-textarea.notEmpty + .label-control {
 	top: 0.125rem;
 	opacity: 1;
-	font-size: 0.75rem;
+	font-size: 1rem;
 	font-weight: 700;
 }
 
