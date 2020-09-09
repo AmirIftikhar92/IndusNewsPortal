@@ -1,0 +1,74 @@
+﻿@model IndusNews_PortalApp.Models.Job
+
+@{
+    ViewBag.Title = "Job Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Job Details</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.JobTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JobTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JobDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JobDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JobDepartment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JobDepartment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JobCity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JobCity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JobPostedOn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JobPostedOn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JobLastDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JobLastDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JobPostedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JobPostedBy)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.JobId }) |
+    @Html.ActionLink("Back to Jobs", "Index")
+</p>

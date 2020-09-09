@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "Main Page";
+}
+
+<div class="jumbotron">
+    <h1>INDUS NEWS PORTAL</h1>
+    <p class="lead">An ultimate solution to manage records and important data for efficient management in organization.</p>
+    <p><a href="https://indus.news" target="_blank" class="btn btn-default btn-lg">Visit Indus News &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>HR Department</h2>
+        <p>From job seekers to emloyees, manage all human resources data</p>
+        <p>@Html.ActionLink("HR", "Dashboard", "HR", null, new { @class = "btn btn-primary" })</p>
+    </div>
+    <div class="col-md-4">
+        <h2>Accounts &amp; Finance</h2>
+        <p>Manage payroll, budget and other accounts &amp; finance details efficiently</p>
+        <p>@Html.ActionLink("Accounts & Finance", "Dashboard", "AccountsFinance", null, new { @class = "btn btn-primary" })</p>
+    </div>
+    <div class="col-md-4">
+        <h2>Employee</h2>
+        <p>View profile, employment details, attendance and leave requests</p>
+        <p>@Html.ActionLink("Employee", "Dashboard", "EmpDashboard", null, new { @class = "btn btn-primary" })</p>
+    </div>
+</div>

@@ -1,0 +1,208 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Indus News is a Pakistani English news channel. Stay tuned for latest news and updates">
+    <meta name="author" content="Indus News">
+
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
+    <meta property="og:site_name" content="Indus News Portal" /> <!-- website name -->
+    <meta property="og:site" content="http://hrmsys.azurewebsites.net/" /> <!-- website link -->
+    <meta property="og:title" content="" /> <!-- title shown in the actual shared post -->
+    <meta property="og:description" content="" /> <!-- description shown in the actual shared post -->
+    <meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
+    <meta property="og:url" content="" /> <!-- where do you want your post to link to -->
+    <meta property="og:type" content="article" />
+    <title>@ViewBag.Title - Indus News</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i" rel="stylesheet">
+    <link href="~/Content/CustomCSS/bootstrap.css" rel="stylesheet">
+    <link href="~/Content/CustomCSS/fontawesome-all.css" rel="stylesheet">
+    <link href="~/Content/CustomCSS/swiper.css" rel="stylesheet">
+    <link href="~/Content/CustomCSS/magnific-popup.css" rel="stylesheet">
+    <link href="~/Content/CustomCSS/styles.css" rel="stylesheet">
+</head>
+<body data-spy="scroll" data-target=".fixed-top">
+    <!-- Preloader -->
+    @*<div class="spinner-wrapper">
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+        </div>*@
+    <!-- end of preloader -->
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-md navbar-custom fixed-top" style="background-color: #4633af !important">
+        <!-- Text Logo -->
+        @Html.ActionLink("INDUS NEWS", "Homepage", "Home", null, new { @class = "navbar-brand logo-text page-scroll" })
+        <!-- Image Logo -->
+        @*<a class="navbar-brand logo-image" href="#"><img src="~/Images/logo.svg" alt="alternative"></a>*@
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-awesome fas fa-bars"></span>
+            <span class="navbar-toggler-awesome fas fa-times"></span>
+        </button>
+        <!-- end of mobile menu toggle button -->
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    @Html.ActionLink("HOME", "Homepage", "Home", null, new { @class = "nav-link page-scroll" })
+                </li>
+                <li class="nav-item">
+                    @Html.ActionLink("CAREERS", "Careers", "Home", null, new { @class = "nav-link page-scroll" })
+                </li>
+
+                <!-- Dropdown Menu -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle page-scroll" href="#details" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">PROGRAMS</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#"><span class="item-text">In FOCUS SOUTH ASIA</span></a>
+                        <div class="dropdown-items-divide-hr"></div>
+                        <a class="dropdown-item" href="#"><span class="item-text">SCOPE</span></a>
+                        <div class="dropdown-items-divide-hr"></div>
+                        <a class="dropdown-item" href="#"><span class="item-text">COFFEE TABLE</span></a>
+                        <div class="dropdown-items-divide-hr"></div>
+                        <a class="dropdown-item" href="#"><span class="item-text">INDUS SPECIAL</span></a>
+                        <div class="dropdown-items-divide-hr"></div>
+                        <a class="dropdown-item" href="#"><span class="item-text">NEWS WIRE</span></a>
+                        <div class="dropdown-items-divide-hr"></div>
+                        <a class="dropdown-item" href="#"><span class="item-text">VISITORS' BOOK</span></a>
+                    </div>
+                </li>
+                <!-- end of dropdown menu -->
+
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="https://www.youtube.com/watch?v=D9KHbHipoJ4&ab_channel=indusdotnews" target="_blank">WATCH LIVE</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="#">CONTACT</a>
+                </li>
+
+                <li class="nav-item">
+                    @Html.ActionLink("PORTAL", "Index", "Home", null, new { @class = "nav-link page-scroll" })
+                </li>
+            </ul>
+            <span class="nav-item social-icons">
+                <span class="fa-stack">
+                    <a href="#your-link">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fab fa-youtube fa-stack-1x"></i>
+                    </a>
+                </span>
+                <span class="fa-stack">
+                    <a href="#your-link">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fab fa-facebook-f fa-stack-1x"></i>
+                    </a>
+                </span>
+                <span class="fa-stack">
+                    <a href="#your-link">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fab fa-twitter fa-stack-1x"></i>
+                    </a>
+                </span>
+                <span class="fa-stack">
+                    <a href="#your-link">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fab fa-instagram fa-stack-1x"></i>
+                    </a>
+                </span>
+            </span>
+        </div>
+    </nav> <!-- end of navbar -->
+    <!-- end of navigation -->
+
+    <div class="">
+        @RenderBody()
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="footer-col">
+                        <h4>About Indus News</h4>
+                        <p> Indus News, aims to present Pakistan’s perspective on issues of regional and global importance through an inside-out view. We believe the viewer receives the greatest benefit from news and analyses in a global-to-local context.</p>
+                    </div>
+                </div> <!-- end of col -->
+                <div class="col-md-4">
+                    <div class="footer-col middle">
+                        <h4>Important Links</h4>
+                        <ul class="list-unstyled li-space-lg">
+                            <li class="media">
+                                <i class="fas fa-square"></i>
+                                <div class="media-body">Latest News: <a class="turquoise" href="https://indus.news">indus.news</a></div>
+                            </li>
+                            <li class="media">
+                                <i class="fas fa-square"></i>
+                                <div class="media-body">Watch Live: <a class="turquoise" href="https://indus.news/live">indus.news/live</a></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div> <!-- end of col -->
+                <div class="col-md-4">
+                    <div class="footer-col last">
+                        <h4>Social Media</h4>
+                        <span class="fa-stack">
+                            <a href="https://youtube.com/indusdotnews">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-youtube fa-stack-1x"></i>
+                            </a>
+                        </span>
+                        <span class="fa-stack">
+                            <a href="https://facebook.com/indusdotnews">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-facebook-f fa-stack-1x"></i>
+                            </a>
+                        </span>
+                        <span class="fa-stack">
+                            <a href="https://twitter.com/indusdotnews">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-twitter fa-stack-1x"></i>
+                            </a>
+                        </span>
+                        <span class="fa-stack">
+                            <a href="https://instagram.com/indusdotnews">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-instagram fa-stack-1x"></i>
+                            </a>
+                        </span>
+                    </div>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of footer -->
+    <!-- end of footer -->
+    <!-- Copyright -->
+    <div class="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="p-small">Copyright © 2020 <a href="https://indus.news">Indus News</a> - All rights reserved.</p>
+                </div> <!-- end of col -->
+            </div> <!-- enf of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of copyright -->
+    <!-- end of copyright -->
+    <!-- Scripts -->
+    <script src="~/Scripts/CustomScripts/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+    <script src="~/Scripts/CustomScripts/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
+    <script src="~/Scripts/CustomScripts/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+    <script src="~/Scripts/CustomScripts/jquery.easing.min.js"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
+    <script src="~/Scripts/CustomScripts/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+    <script src="~/Scripts/CustomScripts/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
+    <script src="~/Scripts/CustomScripts/morphext.min.js"></script> <!-- Morphtext rotating text in the header -->
+    <script src="~/Scripts/CustomScripts/validator.min.js"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
+    <script src="~/Scripts/CustomScripts/scripts.js"></script> <!-- Custom scripts -->
+</body>
+</html>

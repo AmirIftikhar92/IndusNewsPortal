@@ -1,0 +1,619 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DB_A66B9F_dbindusportalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Attendance">
+          <Key>
+            <PropertyRef Name="AttLogId" />
+          </Key>
+          <Property Name="AttLogId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Date" Type="datetime" />
+          <Property Name="EmpId" Type="nvarchar" MaxLength="50" />
+          <Property Name="CheckIn" Type="datetime" />
+          <Property Name="CheckOut" Type="datetime" />
+          <Property Name="AttendanceStatus" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Budget">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CurrentBalalnce" Type="int" />
+          <Property Name="RequiredBudget" Type="int" />
+          <Property Name="BudgetStatus" Type="int" />
+          <Property Name="UpdatedOn" Type="datetime" />
+          <Property Name="UpdatedBy" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="CV">
+          <Key>
+            <PropertyRef Name="CVId" />
+          </Key>
+          <Property Name="CVId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CVFileName" Type="nvarchar" MaxLength="50" />
+          <Property Name="CVContentType" Type="nvarchar" MaxLength="200" />
+          <Property Name="CVFile" Type="varbinary(max)" />
+          <Property Name="ApplicantId" Type="int" />
+        </EntityType>
+        <EntityType Name="Document">
+          <Key>
+            <PropertyRef Name="DocumentId" />
+          </Key>
+          <Property Name="DocumentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DocName" Type="nvarchar" MaxLength="50" />
+          <Property Name="DocDetails" Type="nvarchar" MaxLength="100" />
+          <Property Name="DocContentType" Type="nvarchar" MaxLength="200" />
+          <Property Name="DocFile" Type="varbinary(max)" />
+          <Property Name="DocEmployeeId" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="EmployeeId" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmployeeId" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="EmpName" Type="varchar" MaxLength="50" />
+          <Property Name="EmpDesignation" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmpDept" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmpCNIC" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmpEmail" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmpPhone" Type="nvarchar" MaxLength="50" />
+          <Property Name="Emp2ndPhone" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmpAddress" Type="nvarchar" MaxLength="50" />
+          <Property Name="JobCity" Type="nvarchar" MaxLength="50" />
+          <Property Name="SalaryPackage" Type="nvarchar" MaxLength="50" />
+          <Property Name="JobStatus" Type="nvarchar" MaxLength="50" />
+          <Property Name="JoiningDate" Type="datetime" />
+          <Property Name="ResignDate" Type="datetime" />
+          <Property Name="EmpUsername" Type="nvarchar" MaxLength="256" />
+          <Property Name="CreatedOn" Type="datetime" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Job">
+          <Key>
+            <PropertyRef Name="JobId" />
+          </Key>
+          <Property Name="JobId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="JobTitle" Type="nvarchar" MaxLength="100" />
+          <Property Name="JobDescription" Type="nvarchar" MaxLength="300" />
+          <Property Name="JobDepartment" Type="nvarchar" MaxLength="50" />
+          <Property Name="JobCity" Type="nvarchar" MaxLength="50" />
+          <Property Name="JobPostedOn" Type="datetime" />
+          <Property Name="JobLastDate" Type="datetime" />
+          <Property Name="JobPostedBy" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="JobApplicant">
+          <Key>
+            <PropertyRef Name="ApplicantId" />
+          </Key>
+          <Property Name="ApplicantId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ApplicantName" Type="nvarchar" MaxLength="50" />
+          <Property Name="ApplicantEmail" Type="nvarchar" MaxLength="50" />
+          <Property Name="ApplicantPhone" Type="nvarchar" MaxLength="50" />
+          <Property Name="AppliedJob" Type="int" />
+          <Property Name="ApplyDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="LeaveApplication">
+          <Key>
+            <PropertyRef Name="ApplicationId" />
+          </Key>
+          <Property Name="ApplicationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmpId" Type="nvarchar" MaxLength="50" />
+          <Property Name="LeaveStartDate" Type="datetime" />
+          <Property Name="LeaveEndDate" Type="datetime" />
+          <Property Name="RequestDetails" Type="nvarchar" MaxLength="300" />
+          <Property Name="LeaveStatus" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Transaction">
+          <Key>
+            <PropertyRef Name="TransactionId" />
+          </Key>
+          <Property Name="TransactionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TransDate" Type="datetime" />
+          <Property Name="TransStatus" Type="nvarchar" MaxLength="50" />
+          <Property Name="TransAmount" Type="nvarchar" MaxLength="50" />
+          <Property Name="TransDetails" Type="nvarchar" MaxLength="100" />
+          <Property Name="EmpId" Type="nvarchar" MaxLength="50" />
+          <Property Name="BankAccount" Type="nvarchar" MaxLength="50" />
+          <Property Name="TransactionBy" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_Attendance_Employee">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+          <End Role="Attendance" Type="Self.Attendance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="EmployeeId" />
+            </Principal>
+            <Dependent Role="Attendance">
+              <PropertyRef Name="EmpId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CV_JobApplicant">
+          <End Role="JobApplicant" Type="Self.JobApplicant" Multiplicity="0..1" />
+          <End Role="CV" Type="Self.CV" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="JobApplicant">
+              <PropertyRef Name="ApplicantId" />
+            </Principal>
+            <Dependent Role="CV">
+              <PropertyRef Name="ApplicantId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Document_Employee">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+          <End Role="Document" Type="Self.Document" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="EmployeeId" />
+            </Principal>
+            <Dependent Role="Document">
+              <PropertyRef Name="DocEmployeeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_JobApplicant_Job">
+          <End Role="Job" Type="Self.Job" Multiplicity="0..1" />
+          <End Role="JobApplicant" Type="Self.JobApplicant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Job">
+              <PropertyRef Name="JobId" />
+            </Principal>
+            <Dependent Role="JobApplicant">
+              <PropertyRef Name="AppliedJob" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LeaveApplication_Employee">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+          <End Role="LeaveApplication" Type="Self.LeaveApplication" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="EmployeeId" />
+            </Principal>
+            <Dependent Role="LeaveApplication">
+              <PropertyRef Name="EmpId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Transaction_Employee">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+          <End Role="Transaction" Type="Self.Transaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="EmployeeId" />
+            </Principal>
+            <Dependent Role="Transaction">
+              <PropertyRef Name="EmpId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DB_A66B9F_dbindusportalModelStoreContainer">
+          <EntitySet Name="Attendance" EntityType="Self.Attendance" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Budget" EntityType="Self.Budget" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CV" EntityType="Self.CV" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Document" EntityType="Self.Document" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Job" EntityType="Self.Job" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="JobApplicant" EntityType="Self.JobApplicant" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LeaveApplication" EntityType="Self.LeaveApplication" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Transaction" EntityType="Self.Transaction" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Attendance_Employee" Association="Self.FK_Attendance_Employee">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="Attendance" EntitySet="Attendance" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CV_JobApplicant" Association="Self.FK_CV_JobApplicant">
+            <End Role="JobApplicant" EntitySet="JobApplicant" />
+            <End Role="CV" EntitySet="CV" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Document_Employee" Association="Self.FK_Document_Employee">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="Document" EntitySet="Document" />
+          </AssociationSet>
+          <AssociationSet Name="FK_JobApplicant_Job" Association="Self.FK_JobApplicant_Job">
+            <End Role="Job" EntitySet="Job" />
+            <End Role="JobApplicant" EntitySet="JobApplicant" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LeaveApplication_Employee" Association="Self.FK_LeaveApplication_Employee">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="LeaveApplication" EntitySet="LeaveApplication" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Transaction_Employee" Association="Self.FK_Transaction_Employee">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="Transaction" EntitySet="Transaction" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DB_A66B9F_dbindusportalModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Attendance">
+          <Key>
+            <PropertyRef Name="AttLogId" />
+          </Key>
+          <Property Name="AttLogId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
+          <Property Name="EmpId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CheckIn" Type="DateTime" Precision="3" />
+          <Property Name="CheckOut" Type="DateTime" Precision="3" />
+          <Property Name="AttendanceStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK_Attendance_Employee" FromRole="Attendance" ToRole="Employee" />
+        </EntityType>
+        <EntityType Name="Budget">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CurrentBalalnce" Type="Int32" />
+          <Property Name="RequiredBudget" Type="Int32" />
+          <Property Name="BudgetStatus" Type="Int32" />
+          <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="CV">
+          <Key>
+            <PropertyRef Name="CVId" />
+          </Key>
+          <Property Name="CVId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CVFileName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CVContentType" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="CVFile" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="ApplicantId" Type="Int32" />
+          <NavigationProperty Name="JobApplicant" Relationship="Self.FK_CV_JobApplicant" FromRole="CV" ToRole="JobApplicant" />
+        </EntityType>
+        <EntityType Name="Document">
+          <Key>
+            <PropertyRef Name="DocumentId" />
+          </Key>
+          <Property Name="DocumentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DocName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DocDetails" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DocContentType" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="DocFile" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="DocEmployeeId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK_Document_Employee" FromRole="Document" ToRole="Employee" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="EmployeeId" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmployeeId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="EmpName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EmpDesignation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmpDept" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmpCNIC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmpEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmpPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Emp2ndPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmpAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="JobCity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SalaryPackage" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="JobStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="JoiningDate" Type="DateTime" Precision="3" />
+          <Property Name="ResignDate" Type="DateTime" Precision="3" />
+          <Property Name="EmpUsername" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Attendances" Relationship="Self.FK_Attendance_Employee" FromRole="Employee" ToRole="Attendance" />
+          <NavigationProperty Name="Documents" Relationship="Self.FK_Document_Employee" FromRole="Employee" ToRole="Document" />
+          <NavigationProperty Name="LeaveApplications" Relationship="Self.FK_LeaveApplication_Employee" FromRole="Employee" ToRole="LeaveApplication" />
+          <NavigationProperty Name="Transactions" Relationship="Self.FK_Transaction_Employee" FromRole="Employee" ToRole="Transaction" />
+        </EntityType>
+        <EntityType Name="Job">
+          <Key>
+            <PropertyRef Name="JobId" />
+          </Key>
+          <Property Name="JobId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="JobTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="JobDescription" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="JobDepartment" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="JobCity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="JobPostedOn" Type="DateTime" Precision="3" />
+          <Property Name="JobLastDate" Type="DateTime" Precision="3" />
+          <Property Name="JobPostedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="JobApplicants" Relationship="Self.FK_JobApplicant_Job" FromRole="Job" ToRole="JobApplicant" />
+        </EntityType>
+        <EntityType Name="JobApplicant">
+          <Key>
+            <PropertyRef Name="ApplicantId" />
+          </Key>
+          <Property Name="ApplicantId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ApplicantName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ApplicantEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ApplicantPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AppliedJob" Type="Int32" />
+          <Property Name="ApplyDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="CVs" Relationship="Self.FK_CV_JobApplicant" FromRole="JobApplicant" ToRole="CV" />
+          <NavigationProperty Name="Job" Relationship="Self.FK_JobApplicant_Job" FromRole="JobApplicant" ToRole="Job" />
+        </EntityType>
+        <EntityType Name="LeaveApplication">
+          <Key>
+            <PropertyRef Name="ApplicationId" />
+          </Key>
+          <Property Name="ApplicationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmpId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LeaveStartDate" Type="DateTime" Precision="3" />
+          <Property Name="LeaveEndDate" Type="DateTime" Precision="3" />
+          <Property Name="RequestDetails" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="LeaveStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK_LeaveApplication_Employee" FromRole="LeaveApplication" ToRole="Employee" />
+        </EntityType>
+        <EntityType Name="Transaction">
+          <Key>
+            <PropertyRef Name="TransactionId" />
+          </Key>
+          <Property Name="TransactionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TransDate" Type="DateTime" Precision="3" />
+          <Property Name="TransStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TransAmount" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TransDetails" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="EmpId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BankAccount" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TransactionBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK_Transaction_Employee" FromRole="Transaction" ToRole="Employee" />
+        </EntityType>
+        <Association Name="FK_Attendance_Employee">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+          <End Role="Attendance" Type="Self.Attendance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="EmployeeId" />
+            </Principal>
+            <Dependent Role="Attendance">
+              <PropertyRef Name="EmpId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CV_JobApplicant">
+          <End Role="JobApplicant" Type="Self.JobApplicant" Multiplicity="0..1" />
+          <End Role="CV" Type="Self.CV" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="JobApplicant">
+              <PropertyRef Name="ApplicantId" />
+            </Principal>
+            <Dependent Role="CV">
+              <PropertyRef Name="ApplicantId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Document_Employee">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+          <End Role="Document" Type="Self.Document" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="EmployeeId" />
+            </Principal>
+            <Dependent Role="Document">
+              <PropertyRef Name="DocEmployeeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LeaveApplication_Employee">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+          <End Role="LeaveApplication" Type="Self.LeaveApplication" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="EmployeeId" />
+            </Principal>
+            <Dependent Role="LeaveApplication">
+              <PropertyRef Name="EmpId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Transaction_Employee">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+          <End Role="Transaction" Type="Self.Transaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="EmployeeId" />
+            </Principal>
+            <Dependent Role="Transaction">
+              <PropertyRef Name="EmpId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_JobApplicant_Job">
+          <End Role="Job" Type="Self.Job" Multiplicity="0..1" />
+          <End Role="JobApplicant" Type="Self.JobApplicant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Job">
+              <PropertyRef Name="JobId" />
+            </Principal>
+            <Dependent Role="JobApplicant">
+              <PropertyRef Name="AppliedJob" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DB_A66B9F_dbindusportalEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Attendances" EntityType="Self.Attendance" />
+          <EntitySet Name="Budgets" EntityType="Self.Budget" />
+          <EntitySet Name="CVs" EntityType="Self.CV" />
+          <EntitySet Name="Documents" EntityType="Self.Document" />
+          <EntitySet Name="Employees" EntityType="Self.Employee" />
+          <EntitySet Name="Jobs" EntityType="Self.Job" />
+          <EntitySet Name="JobApplicants" EntityType="Self.JobApplicant" />
+          <EntitySet Name="LeaveApplications" EntityType="Self.LeaveApplication" />
+          <EntitySet Name="Transactions" EntityType="Self.Transaction" />
+          <AssociationSet Name="FK_Attendance_Employee" Association="Self.FK_Attendance_Employee">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="Attendance" EntitySet="Attendances" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CV_JobApplicant" Association="Self.FK_CV_JobApplicant">
+            <End Role="JobApplicant" EntitySet="JobApplicants" />
+            <End Role="CV" EntitySet="CVs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Document_Employee" Association="Self.FK_Document_Employee">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="Document" EntitySet="Documents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LeaveApplication_Employee" Association="Self.FK_LeaveApplication_Employee">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="LeaveApplication" EntitySet="LeaveApplications" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Transaction_Employee" Association="Self.FK_Transaction_Employee">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="Transaction" EntitySet="Transactions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_JobApplicant_Job" Association="Self.FK_JobApplicant_Job">
+            <End Role="Job" EntitySet="Jobs" />
+            <End Role="JobApplicant" EntitySet="JobApplicants" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DB_A66B9F_dbindusportalModelStoreContainer" CdmEntityContainer="DB_A66B9F_dbindusportalEntities">
+          <EntitySetMapping Name="Attendances">
+            <EntityTypeMapping TypeName="DB_A66B9F_dbindusportalModel.Attendance">
+              <MappingFragment StoreEntitySet="Attendance">
+                <ScalarProperty Name="AttLogId" ColumnName="AttLogId" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="EmpId" ColumnName="EmpId" />
+                <ScalarProperty Name="CheckIn" ColumnName="CheckIn" />
+                <ScalarProperty Name="CheckOut" ColumnName="CheckOut" />
+                <ScalarProperty Name="AttendanceStatus" ColumnName="AttendanceStatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Budgets">
+            <EntityTypeMapping TypeName="DB_A66B9F_dbindusportalModel.Budget">
+              <MappingFragment StoreEntitySet="Budget">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CurrentBalalnce" ColumnName="CurrentBalalnce" />
+                <ScalarProperty Name="RequiredBudget" ColumnName="RequiredBudget" />
+                <ScalarProperty Name="BudgetStatus" ColumnName="BudgetStatus" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CVs">
+            <EntityTypeMapping TypeName="DB_A66B9F_dbindusportalModel.CV">
+              <MappingFragment StoreEntitySet="CV">
+                <ScalarProperty Name="CVId" ColumnName="CVId" />
+                <ScalarProperty Name="CVFileName" ColumnName="CVFileName" />
+                <ScalarProperty Name="CVContentType" ColumnName="CVContentType" />
+                <ScalarProperty Name="CVFile" ColumnName="CVFile" />
+                <ScalarProperty Name="ApplicantId" ColumnName="ApplicantId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Documents">
+            <EntityTypeMapping TypeName="DB_A66B9F_dbindusportalModel.Document">
+              <MappingFragment StoreEntitySet="Document">
+                <ScalarProperty Name="DocumentId" ColumnName="DocumentId" />
+                <ScalarProperty Name="DocName" ColumnName="DocName" />
+                <ScalarProperty Name="DocDetails" ColumnName="DocDetails" />
+                <ScalarProperty Name="DocContentType" ColumnName="DocContentType" />
+                <ScalarProperty Name="DocFile" ColumnName="DocFile" />
+                <ScalarProperty Name="DocEmployeeId" ColumnName="DocEmployeeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employees">
+            <EntityTypeMapping TypeName="DB_A66B9F_dbindusportalModel.Employee">
+              <MappingFragment StoreEntitySet="Employee">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+                <ScalarProperty Name="EmpName" ColumnName="EmpName" />
+                <ScalarProperty Name="EmpDesignation" ColumnName="EmpDesignation" />
+                <ScalarProperty Name="EmpDept" ColumnName="EmpDept" />
+                <ScalarProperty Name="EmpCNIC" ColumnName="EmpCNIC" />
+                <ScalarProperty Name="EmpEmail" ColumnName="EmpEmail" />
+                <ScalarProperty Name="EmpPhone" ColumnName="EmpPhone" />
+                <ScalarProperty Name="Emp2ndPhone" ColumnName="Emp2ndPhone" />
+                <ScalarProperty Name="EmpAddress" ColumnName="EmpAddress" />
+                <ScalarProperty Name="JobCity" ColumnName="JobCity" />
+                <ScalarProperty Name="SalaryPackage" ColumnName="SalaryPackage" />
+                <ScalarProperty Name="JobStatus" ColumnName="JobStatus" />
+                <ScalarProperty Name="JoiningDate" ColumnName="JoiningDate" />
+                <ScalarProperty Name="ResignDate" ColumnName="ResignDate" />
+                <ScalarProperty Name="EmpUsername" ColumnName="EmpUsername" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Jobs">
+            <EntityTypeMapping TypeName="DB_A66B9F_dbindusportalModel.Job">
+              <MappingFragment StoreEntitySet="Job">
+                <ScalarProperty Name="JobId" ColumnName="JobId" />
+                <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+                <ScalarProperty Name="JobDescription" ColumnName="JobDescription" />
+                <ScalarProperty Name="JobDepartment" ColumnName="JobDepartment" />
+                <ScalarProperty Name="JobCity" ColumnName="JobCity" />
+                <ScalarProperty Name="JobPostedOn" ColumnName="JobPostedOn" />
+                <ScalarProperty Name="JobLastDate" ColumnName="JobLastDate" />
+                <ScalarProperty Name="JobPostedBy" ColumnName="JobPostedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="JobApplicants">
+            <EntityTypeMapping TypeName="DB_A66B9F_dbindusportalModel.JobApplicant">
+              <MappingFragment StoreEntitySet="JobApplicant">
+                <ScalarProperty Name="ApplicantId" ColumnName="ApplicantId" />
+                <ScalarProperty Name="ApplicantName" ColumnName="ApplicantName" />
+                <ScalarProperty Name="ApplicantEmail" ColumnName="ApplicantEmail" />
+                <ScalarProperty Name="ApplicantPhone" ColumnName="ApplicantPhone" />
+                <ScalarProperty Name="AppliedJob" ColumnName="AppliedJob" />
+                <ScalarProperty Name="ApplyDate" ColumnName="ApplyDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LeaveApplications">
+            <EntityTypeMapping TypeName="DB_A66B9F_dbindusportalModel.LeaveApplication">
+              <MappingFragment StoreEntitySet="LeaveApplication">
+                <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+                <ScalarProperty Name="EmpId" ColumnName="EmpId" />
+                <ScalarProperty Name="LeaveStartDate" ColumnName="LeaveStartDate" />
+                <ScalarProperty Name="LeaveEndDate" ColumnName="LeaveEndDate" />
+                <ScalarProperty Name="RequestDetails" ColumnName="RequestDetails" />
+                <ScalarProperty Name="LeaveStatus" ColumnName="LeaveStatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Transactions">
+            <EntityTypeMapping TypeName="DB_A66B9F_dbindusportalModel.Transaction">
+              <MappingFragment StoreEntitySet="Transaction">
+                <ScalarProperty Name="TransactionId" ColumnName="TransactionId" />
+                <ScalarProperty Name="TransDate" ColumnName="TransDate" />
+                <ScalarProperty Name="TransStatus" ColumnName="TransStatus" />
+                <ScalarProperty Name="TransAmount" ColumnName="TransAmount" />
+                <ScalarProperty Name="TransDetails" ColumnName="TransDetails" />
+                <ScalarProperty Name="EmpId" ColumnName="EmpId" />
+                <ScalarProperty Name="BankAccount" ColumnName="BankAccount" />
+                <ScalarProperty Name="TransactionBy" ColumnName="TransactionBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

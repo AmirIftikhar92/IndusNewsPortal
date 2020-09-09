@@ -1,0 +1,52 @@
+﻿@model IEnumerable<IndusNews_PortalApp.Models.Budget>
+
+@{
+    ViewBag.Title = "Budget";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Budget Log</h2>
+
+<p>
+    @Html.ActionLink("Add New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CurrentBalalnce)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RequiredBudget)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BudgetStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UpdatedOn)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CurrentBalalnce)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RequiredBudget)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BudgetStatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UpdatedOn)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

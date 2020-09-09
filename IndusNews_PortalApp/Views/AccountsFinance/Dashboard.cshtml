@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="jumbotron">
+    <h1>ACCOUNTS &amp; FINANCE DASHBOARD</h1>
+    <p class="lead">Manage payroll, transactions and other budget details</p>
+    <p><a href="https://indus.news" target="_blank" class="btn btn-default btn-lg">Visit Indus News &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Payroll</h2>
+        <p>Update the payment status of monthly salary</p>
+        <p>@Html.ActionLink("Payroll", "Index", "Transactions", null, new { @class = "btn btn-primary" })</p>
+    </div>
+    <div class="col-md-4">
+        <h2>Budget</h2>
+        <p>Update organization's budget details</p>
+        <p>@Html.ActionLink("Budget", "Index", "Budgets", null, new { @class = "btn btn-primary" })</p>
+    </div>
+    <div class="col-md-4">
+        <h2>Transaction</h2>
+        <p>Update transaction details to keep record of debit/credit</p>
+        <p>@Html.ActionLink("Transaction", "Create", "Transactions", null, new { @class = "btn btn-primary" })</p>
+    </div>
+</div>

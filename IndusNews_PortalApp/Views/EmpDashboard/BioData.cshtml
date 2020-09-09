@@ -1,0 +1,121 @@
+﻿@model IndusNews_PortalApp.Models.Employee
+
+@{
+    ViewBag.Title = "Employee Info";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <h2>Employee Info</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.EmployeeId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmployeeId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmpName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmpName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmpDesignation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmpDesignation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmpDept)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmpDept)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmpCNIC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmpCNIC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmpEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmpEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmpPhone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmpPhone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Emp2ndPhone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Emp2ndPhone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmpAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmpAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JobCity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JobCity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SalaryPackage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SalaryPackage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JoiningDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JoiningDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmpUsername)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmpUsername)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to Dashboard", "Dashboard")
+</p>

@@ -1,0 +1,54 @@
+﻿@model IEnumerable<IndusNews_PortalApp.Models.Job>
+
+@{
+    ViewBag.Title = "Careers";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+
+    <div style="margin-top: 5%">
+        <h2 style="color:black">Careers</h2>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.JobTitle)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.JobDescription)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.JobDepartment)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.JobCity)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.JobLastDate)
+                </th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.JobTitle)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.JobDescription)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.JobDepartment)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.JobCity)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.JobLastDate)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Apply", "#", new { id = item.JobId })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>

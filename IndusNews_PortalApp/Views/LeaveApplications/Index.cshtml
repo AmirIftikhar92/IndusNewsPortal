@@ -1,0 +1,54 @@
+﻿@model IEnumerable<IndusNews_PortalApp.Models.LeaveApplication>
+
+@{
+    ViewBag.Title = "Leave Applications List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Leave Applications</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.LeaveStartDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LeaveEndDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RequestDetails)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LeaveStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Employee.EmpName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.LeaveStartDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LeaveEndDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RequestDetails)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LeaveStatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Employee.EmpName)
+        </td>
+        <td>
+            @Html.ActionLink("Details", "Details", new { id=item.ApplicationId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ApplicationId })
+        </td>
+    </tr>
+}
+
+</table>

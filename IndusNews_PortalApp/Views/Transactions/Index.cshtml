@@ -1,0 +1,70 @@
+﻿@model IEnumerable<IndusNews_PortalApp.Models.Transaction>
+
+@{
+    ViewBag.Title = "Transactions";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Transactions</h2>
+
+<p>
+    @Html.ActionLink("Add New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TransDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TransStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TransAmount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TransDetails)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BankAccount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TransactionBy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Employee.EmpName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TransDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TransStatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TransAmount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TransDetails)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BankAccount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TransactionBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Employee.EmpName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.TransactionId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.TransactionId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.TransactionId })
+        </td>
+    </tr>
+}
+
+</table>
