@@ -53,6 +53,7 @@ namespace IndusNews_PortalApp.Controllers
         {
             if (ModelState.IsValid)
             {
+                jobApplicant.ApplyDate = DateTime.Now;
                 db.JobApplicants.Add(jobApplicant);
                 db.SaveChanges();
                 return RedirectToAction("Careers","Home");
